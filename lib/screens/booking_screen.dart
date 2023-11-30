@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic/models/service_provider.dart';
+import 'package:mechanic/models/vehicle.dart';
 import 'package:mechanic/providers/controller.dart';
  import 'package:mechanic/utils/app_strings.dart';
 import 'package:mechanic/utils/constants.dart';
@@ -7,8 +8,9 @@ import 'package:mechanic/utils/state_renderer/state_renderer_impl.dart';
 import 'package:mechanic/widgets/service_provider_item.dart';
 
 class BookingScreen extends StatefulWidget {
-      BookingScreen({super.key,required this.carModel});
+      BookingScreen({super.key,required this.carModel,required this.car});
     String carModel ;
+    Car car ;
 
   @override
   State<BookingScreen> createState() => _BookingScreenState();
@@ -73,7 +75,7 @@ class _BookingScreenState extends State<BookingScreen> {
             physics: const BouncingScrollPhysics(),
             itemBuilder: (context, index) =>Padding(
                 padding: const EdgeInsets.all(10.0),
-                child:snapshot.data ==null? Container(): ServiceProviderItem(serviceProvider: snapshot.data![index])
+                child:snapshot.data ==null? Container(): ServiceProviderItem(serviceProvider: snapshot.data![index],car:widget.car)
             ) ,
             itemCount: snapshot.data?.length,);
         }

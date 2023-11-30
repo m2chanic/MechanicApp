@@ -15,7 +15,7 @@ class SelectCarModelScreen extends StatefulWidget {
 
 class _SelectCarModelScreenState extends State<SelectCarModelScreen> {
   final Controller _controller =Controller();
-
+  Car? car ;
   String? selectedCarType ;
   List<String> myCarsMake = [];
   final GlobalKey<FormState> _frmKey = GlobalKey<FormState>() ;
@@ -69,7 +69,7 @@ class _SelectCarModelScreenState extends State<SelectCarModelScreen> {
               const SizedBox(height: 16.0),
               CustomBTN(text: AppString.continue_, onPressed: () {
                 if(_frmKey.currentState!.validate()){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  BookingScreen(carModel: selectedCarType!,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>  BookingScreen(carModel: selectedCarType!,car: car!,)));
                 }
               },),
             ],
@@ -91,6 +91,7 @@ class _SelectCarModelScreenState extends State<SelectCarModelScreen> {
     onChanged: (value) {
       setState(() {
         selectedCarType = value!.make;
+        car =value ;
       });
     },
     items: Controller.cars?.map((Car car) {

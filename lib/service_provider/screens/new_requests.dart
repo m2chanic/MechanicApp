@@ -8,6 +8,7 @@ import '../../models/car_services.dart';
 import 'package:intl/intl.dart' as intl;
 
 import '../../models/driver_model.dart';
+import '../../utils/app_strings.dart';
 import '../../utils/state_renderer/state_renderer_impl.dart';
 
 class NewRequests extends StatefulWidget {
@@ -93,6 +94,8 @@ Widget? _home() {
                 Text('Payment Status: ${request.paymentStatus}'),
                 Text('Order Date Time: ${intl.DateFormat.yMMMd().format(request.orderDateTime)}'),
                 Text('Status: ${request.status}'),
+                request.car==null ? const Text('Car : unknown') :  Text('Car : ${request.car?.make} | ${request.car?.model}'),
+
               ],
             ),
           ),
@@ -255,6 +258,8 @@ Widget? _home() {
                     Text('Payment Status: ${request.paymentStatus}'),
                     Text('Order Date Time: ${intl.DateFormat.yMMMd().format(request.orderDateTime)}'),
                     Text('Status: ${request.status}'),
+                    request.car==null ? const Text('Car : unknown') :  Text('Car : ${request.car?.make} | ${request.car?.model}'),
+
                   ],
                 ),
               ),

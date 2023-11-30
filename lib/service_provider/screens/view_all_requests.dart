@@ -87,6 +87,8 @@ class _AllRequestsState extends State<AllRequests> {
                     Text('Payment Status: ${request.paymentStatus}'),
                     Text('Order Date Time: ${intl.DateFormat.yMMMd().format(request.orderDateTime)}'),
                     Text('Status: ${request.status}'),
+                    request.car==null ? const Text('Car : unknown') :  Text('Car : ${request.car?.make} | ${request.car?.model}'),
+
                   ],
                 ),
               ),
@@ -120,6 +122,8 @@ class _AllRequestsState extends State<AllRequests> {
                     Text('Payment Status: ${request.paymentStatus}'),
                      Text('Order Date Time: ${intl.DateFormat.yMMMd().format(request.orderDateTime)}'),
                     Text('Status: ${request.status}'),
+                    request.car==null ? const Text('Car : unknown') :  Text('Car : ${request.car?.make} | ${request.car?.model}'),
+
                   ],
                 ),
               ),

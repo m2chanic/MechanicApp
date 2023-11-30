@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic/models/service_provider.dart';
+import 'package:mechanic/models/vehicle.dart';
 import 'package:mechanic/screens/car_services_sceen.dart';
 import 'package:mechanic/utils/app_strings.dart';
 import 'package:mechanic/utils/constants.dart';
@@ -10,8 +11,9 @@ import '../providers/controller.dart';
 
 
 class AppointmentBookingScreen extends StatefulWidget {
-    AppointmentBookingScreen({super.key, required this.serviceProvider});
+    AppointmentBookingScreen({super.key, required this.serviceProvider,required this.car});
   ServiceProvider serviceProvider ;
+  Car car ;
   @override
   _AppointmentBookingScreenState createState() => _AppointmentBookingScreenState();
 }
@@ -21,7 +23,6 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
    String selectedServiceType = 'Book an appointment for the workshop';
     final Controller _controller = Controller();
 
-  // Define a list of service types (e.g., "Go to the workshop" and "Request a service")
 
 @override
   void initState() {
@@ -98,7 +99,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
 
                   const SizedBox(height: 16.0),
                 CustomBTN(text: AppString.selectServices, onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>   CarServicePage(serviceTYpe: selectedServiceType,serviceProvider: widget.serviceProvider),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>   CarServicePage(serviceTYpe: selectedServiceType,serviceProvider: widget.serviceProvider,car:widget.car),));
                 },),
                   const SizedBox(height: 10.0,),
                   Padding(

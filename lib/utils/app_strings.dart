@@ -16,6 +16,7 @@ class AppString{
   static const String wb = 'WhatsApp';
   static const String orderStatus = 'Order Status';
   static const String orderData = 'Created at';
+  static const String carType = 'Car';
   static const String trackOrder = 'Track Order';
   static const String reserve = 'Reserve';
   static const String reservesHistory = 'Reserve History';

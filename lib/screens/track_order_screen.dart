@@ -2,7 +2,6 @@ import 'package:dashed_stepper/dashed_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mechanic/models/order.dart';
-import 'package:mechanic/models/user.dart';
 import 'package:mechanic/screens/driver_profile.dart';
 import 'package:mechanic/utils/app_strings.dart';
 import 'package:mechanic/utils/constants.dart';
@@ -102,6 +101,11 @@ class TrackOrder extends StatelessWidget {
                   title: const Text(AppString.orderStatus),
                   subtitle: Text(order.status,style: TextStyle(color: order.status == 'canceled'?Colors.red :orderStatusColor[orderStatus.indexOf(order.status)]),),
                   trailing:order.status == 'canceled' ? const Icon(Icons.free_cancellation,color: Colors.red,) : orderStatusIcon[orderStatus.indexOf(order.status)],
+                ),
+                ListTile(
+                    title: const Text(AppString.carType),
+                    subtitle:order.car==null ? const Text('unknown'):  Text('${order.car?.make} | ${order.car?.model}'),
+                    trailing:const Icon(Icons.car_rental,)
                 ),
                 ListTile(
                   title: const Text(AppString.orderData),

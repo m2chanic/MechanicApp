@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '../models/service_provider.dart';
-import '../providers/controller.dart';
+import '../models/vehicle.dart';
 import '../screens/appointment_booking_screen.dart';
 import '../utils/app_strings.dart';
 import '../utils/constants.dart';
 
 class ServiceProviderItem extends StatelessWidget {
-    ServiceProviderItem({super.key,required this.serviceProvider});
+    ServiceProviderItem({super.key,required this.serviceProvider,required this.car});
   ServiceProvider serviceProvider ;
   double rate = 0 ;
+  Car car ;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class ServiceProviderItem extends StatelessWidget {
             children: [
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>   AppointmentBookingScreen(serviceProvider: serviceProvider) ,)) ;
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>   AppointmentBookingScreen(serviceProvider: serviceProvider,car:car) ,)) ;
                 },
                 color: AppColors.primaryColor,
                 child: const Text(AppString.reserve, style: TextStyle(color: Colors.white)),

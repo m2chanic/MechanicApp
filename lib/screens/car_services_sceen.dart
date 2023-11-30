@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
  import 'package:mechanic/models/service_provider.dart';
+import 'package:mechanic/models/vehicle.dart';
 import 'package:mechanic/providers/controller.dart';
 import 'package:mechanic/screens/about_services.dart' as service;
 import 'package:mechanic/screens/bill_screen.dart';
@@ -15,8 +16,9 @@ import '../utils/notifi_service.dart';
 DateTime scheduleTime = DateTime.now();
 
 class CarServicePage extends StatefulWidget {
-    CarServicePage({super.key, required this.serviceTYpe, required this.serviceProvider});
+    CarServicePage({super.key, required this.serviceTYpe, required this.serviceProvider,required this.car});
    String serviceTYpe ;
+   Car car ;
    ServiceProvider serviceProvider;
   @override
   _CarServicePageState createState() => _CarServicePageState();
@@ -190,6 +192,7 @@ class _CarServicePageState extends State<CarServicePage> {
                 id: '',
                   user:Controller.user!.uid ,
                   serviceProvider: widget.serviceProvider,
+                  car: widget.car,
                   services: this.selectedServices,
                   orderDateTime: DateTime.now(),
                   paymentStatus: paymentStatus[0],
@@ -203,6 +206,7 @@ class _CarServicePageState extends State<CarServicePage> {
                   id: '',
                   user:Controller.user!.uid ,
                   serviceProvider: widget.serviceProvider,
+                  car: widget.car,
                   services: this.selectedServices,
                   orderDateTime: DateTime.now(),
                   type: widget.serviceTYpe,

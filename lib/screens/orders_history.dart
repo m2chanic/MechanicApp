@@ -139,7 +139,7 @@ class _OrdersHistoryState extends State<OrdersHistory> {
               ),
                  ),
                ),
-              if(order.status!=orderStatus[0]&&order.status!='canceled')
+              if(order.status==orderStatus[2])
                 InkWell(
                   onTap: () {
                    // Navigator.push(context, MaterialPageRoute(builder: (context) => TrackOrder(order: order),));

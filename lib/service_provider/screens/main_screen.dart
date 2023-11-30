@@ -234,7 +234,7 @@ class _ServiceProviderMainScreenState extends State<ServiceProviderMainScreen> {
   }
 
   newRequests()=>SizedBox(
-    height: 150,
+    height: 160,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: ServiceProviderController.newOrders.length,
@@ -255,6 +255,7 @@ class _ServiceProviderMainScreenState extends State<ServiceProviderMainScreen> {
                   Text('Service Required: ${request.services.map((e) => e.name).toList()}'),
                   Text('Order Date Time: ${intl.DateFormat.yMMMd().format(request.orderDateTime)}'),
                   Text('Status: ${request.status}'),
+                  request.car==null ? const Text('Car : unknown') :  Text('Car : ${request.car?.make} | ${request.car?.model}'),
                 ],
               ),
             ),
