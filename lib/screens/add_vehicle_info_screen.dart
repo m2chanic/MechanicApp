@@ -28,7 +28,7 @@ class _AddCarInfoScreenState extends State<AddCarInfoScreen> {
   CarMake? selectedMake;
   String? selectedModel;
   String? selectedEngineType;
-  String? selectedMakeYear ;
+  String? selectedMakeYear = '1990';
 
   bool modelsLoading = false;
   _bind() async {

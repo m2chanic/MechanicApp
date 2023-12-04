@@ -164,7 +164,7 @@ Widget? _home() {
               },
               child: const Text('Accept'),
             ),
-          if(request.status==orderStatus[1]&&request.paymentStatus==paymentStatus[1])
+          if(request.status!=orderStatus[2]&&request.paymentStatus==paymentStatus[1])
             ElevatedButton(
               style:  ButtonStyle(
                   foregroundColor: const MaterialStatePropertyAll(Colors.white),
@@ -328,7 +328,7 @@ Widget? _home() {
                   },
                   child: const Text('Accept'),
                 ),
-              if(request.status==orderStatus[1] && request.paymentStatus == paymentType[1])
+              if(request.status==orderStatus[1] && request.paymentStatus == paymentStatus[1])
                 ElevatedButton(
                   style:  ButtonStyle(
                       foregroundColor: const MaterialStatePropertyAll(Colors.white),

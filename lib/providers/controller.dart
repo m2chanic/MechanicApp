@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:flutter/material.dart';
- import 'package:mechanic/models/car_services.dart';
+import 'package:mechanic/models/car_services.dart';
 import 'package:mechanic/models/order.dart';
 import 'package:mechanic/models/service_provider.dart';
 import 'package:mechanic/models/user.dart';
@@ -11,7 +9,6 @@ import 'package:mechanic/utils/api.dart';
 import 'package:mechanic/utils/constants.dart';
 import 'package:mechanic/utils/state_renderer/state_renderer.dart';
 import 'package:mechanic/utils/state_renderer/state_renderer_impl.dart';
-
 import '../models/car_make.dart';
 import '../models/car_model.dart';
 

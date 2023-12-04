@@ -59,7 +59,9 @@ class DriverController {
 
 
   Future updateOrder(Order order)async{
+     print(order.paymentStatus);
     await remoteDataSource.updateOrder(order).then((value){}).catchError((error){
+      print(error.toString());
     });
   }
 

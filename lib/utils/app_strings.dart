@@ -20,7 +20,7 @@ class AppString{
   static const String trackOrder = 'Track Order';
   static const String reserve = 'Reserve';
   static const String reservesHistory = 'Reserve History';
-  static const String pay = 'Pay';
+  static const String pay = 'E-Pay';
   static const String selectServices = 'Select Car Services';
   static const String continue_ = 'Continue';
   static const String cancelOrder = 'Cancel Order';

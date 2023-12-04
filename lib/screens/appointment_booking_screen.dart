@@ -87,8 +87,7 @@ class _AppointmentBookingScreenState extends State<AppointmentBookingScreen> {
                     items: serviceTypes.map((String serviceType) {
                       return DropdownMenuItem<String>(
                         value: serviceType, // Make sure each value is unique
-                        child: Text(serviceType),
-
+                        child: Text(serviceType==serviceTypes[0]?'At the workshop':'Service at home'),
                       );
                     }).toList(),
                     decoration: const InputDecoration(

@@ -26,6 +26,7 @@ class AppAssets {
   static String success  = 'assets/json/success.json';
   static String user  = 'assets/json/user.json';
   static String driver  = 'assets/json/driver.json';
+  static String grage  = 'assets/json/garage.json';
 
 }
 GlobalKey<ScaffoldState> scfKey =GlobalKey<ScaffoldState>();
